@@ -1,0 +1,81 @@
+
+
+Heap Sort: 
+Based on 1D implementation of Partial Order Binary Trees/Priority Q
+
+Input: a text file contains a list of numbers (positive integers). 
+       	for C++: use argv[1]; for Java: use args[0]
+
+Outputs: 
+	(1) out1, a text file contains the debugging output.
+		for C++: use argv[2]; for Java: use args[1]
+
+	(2) out2, a text file contains the sorted  input numbers.
+    	 	for C++: use argv[3]; for Java: use args[2]
+
+Data structure:
+  	A HeapSort class
+ 	- constructor
+	- destructor
+	- heapAry, an 1-D integer array (dynamically allocated within the program)
+	- buildHeap
+	- deleteHeap
+	- insertOneDataItem
+	- DeleteRoot
+	- bubbleUp
+	- bubbleDown
+	- isHeapEmpty 
+	- isHeapFull 
+	- printHeap
+	 etc..
+		
+Algorihtm steps:
+
+Step 1: 
+	- open the input file; 
+	- read and count the number of date item in the  input file
+	- close the file
+	- dynamically allocate the 1-D array of the size count+1
+	  and initallize heapAry[0] to 0. Remember, heapAry[1] is the front.
+
+step 2: call buildHeap (see algorithm below) 
+
+step 3: call deleteHeap (see algorithm below)
+
+
+buildHeap algorithm:
+
+    step 1: open the input file for the second time
+ 
+    step 2: data <-- get a data item from the input file
+
+    step 3: insertOneDataItem (data) // make sure heap is not full
+	       bubbleUp
+   
+    step 4: printHeap (print the content of heapAry up to the first 10 items of the heap 
+		 (from heapAry[0]) to *out1 file*
+            // in the real life, this is only for your debugging purpose
+
+    step 5: repeat step 2 - 4 while input file is NOT empty
+
+    step 6: close the input file
+
+
+deleteRoot algorithm:
+
+    step 1: open the output file
+    
+    step 2: 
+		- deleteRoot  // make sure heap is not full     
+		- print the root to *out2 file* 
+		- bubbleDown
+
+    step 3: printHeap (print the content of heapAry up to the first 10 items of the heap 
+		 (from heapAry[0]) to *out1 file*
+            // in the real life, this is only for your debugging purpose
+            
+    step 4: repeat step 2 and 3 while the heap is NOT empty
+
+    step 5: - close the output file
+		 - delete heapAry
+
